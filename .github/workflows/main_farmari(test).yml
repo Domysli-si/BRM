@@ -50,4 +50,4 @@ jobs:
           app-name: 'farmari'
           slot-name: 'test'
           package: '*.jar'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2B553AE311C1441495EF5722D33EBE6A }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_047F68AF339846E0B44BB9FE490A7EBA }}
