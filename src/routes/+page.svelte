@@ -23,7 +23,7 @@
 
 <h2>POMOC!</h2>
 
-<div class="big-rectangle" style="height: {bigRectangleHeight}px;">
+<div class="big-rectangle">
   {#each rectangles as rectangle}
     <div class="small-rectangle">{rectangle}</div>
   {/each}
@@ -34,8 +34,9 @@
 
 <style>
   /* Styles for the big rectangle */
-.big-rectangle {
+ .big-rectangle {
     width: 100%;
+    height: var(--big-rectangle-height);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,11 +46,15 @@
   }
 
   /* Styles for the small rectangles */
-.small-rectangle {
+ .small-rectangle {
     width: 100px;
     height: 50px;
     margin: 0 10px; /* Space between rectangles */
     background-color: lightblue;
     display: inline-block; /* Allow small rectangles to be in a single row */
+  }
+
+  :root {
+    --big-rectangle-height: {bigRectangleHeight}px;
   }
 </style>
