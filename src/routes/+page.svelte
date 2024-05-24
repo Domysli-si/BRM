@@ -1,19 +1,4 @@
-<script>
-  let rectangles = ["A", "B", "C", "D", "E"]; // Example data to be displayed
-  let currentIndex = 0;
 
-  function prev() {
-    currentIndex =
-      currentIndex === 0? rectangles.length - 1 : currentIndex - 1;
-  }
-
-  function next() {
-    currentIndex =
-      currentIndex === rectangles.length - 1? 0 : currentIndex + 1;
-  }
-
-  const bigRectangleHeight = window.innerHeight / 3; // One-third of the window height
-</script>
 
 <h1>Welcome to SvelteKit</h1>
 
