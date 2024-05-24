@@ -1,16 +1,16 @@
 {
-	"name": "your-project-name",
-	"version": "1.0.0",
-	"scripts": {
-	  "dev": "vite",
-	  "build": "vite build",
-	  "preview": "vite preview"
-	},
-	"devDependencies": {
-	  "svelte": "^3.58.0",
-	  "svelte-kit": "^1.0.0-next.429",
-	  "vite": "^4.3.9"
-	},
-	"dependencies": {},
-	"type": "module"
-  }
+    "name": "my-package",
+    "version": "1.0.0",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "svelte": "^3.58.0",
+        "svelte-kit": "^1.0.0-next.429",
+        "vite": "^4.3.9"
+    },
+    "dependencies": {},
+    "type": "module"
+}
