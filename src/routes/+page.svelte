@@ -32,25 +32,3 @@
 <button on:click={prev}>Previous</button>
 <button on:click={next}>Next</button>
 
-<style>
-  /* Styles for the big rectangle */
- .big-rectangle {
-    width: 100%;
-    height: {bigRectangleHeight}px; /* Remove the curly braces around bigRectangleHeight */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid black;
-    overflow-x: auto; /* Enable horizontal scrolling if content doesn't fit */
-    white-space: nowrap; /* Prevent text wrapping onto multiple lines */
-  }
-
-  /* Styles for the small rectangles */
- .small-rectangle {
-    width: 100px;
-    height: 50px;
-    margin: 0 10px; /* Space between rectangles */
-    background-color: lightblue;
-    display: inline-block; /* Allow small rectangles to be in a single row */
-  }
-</style>
