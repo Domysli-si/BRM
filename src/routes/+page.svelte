@@ -3,6 +3,8 @@
 
 <style>
   header{
+    background-color: darkseagreen;
+    text-align: center;
     color:brown
   }
 </style>
