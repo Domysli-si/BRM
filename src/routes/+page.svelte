@@ -4,6 +4,7 @@
 <style>
   header{
     background-color: darkseagreen;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     color:brown
   }
@@ -16,7 +17,5 @@
   </h1>
 </header>
 <body>
-  <h1><i>Book Report Management</i></h1>
-</body><h2>hello</h2>
-
-<h2>POMOC!</h2>
+ 
+</body>
