@@ -1,9 +1,30 @@
+
 <script>
 
-    import { build } from "$service-worker";
+  
+    const literatureData = {
+      "Czech literature - 20th and 21st century":{
+        "Karel Čapek": ["Válka s mloky"]
+      }
+
+    }
+
+    let selectedCategory = null;
+    let selectedAuthor = null;
+    let selectedBook = null;
+
+    function selectCategory(category){
+      selectCategory = category;
+      selectedAuthor = null;
+      selectedBook = null;
+    }
+
+  
+
+  
 
 </script>
-<head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale = 1.0">
 
@@ -26,14 +47,14 @@
 </style>
 
 
-
-</head>
-<body>
+<div>
   <header>
     <h1>
     [Book Report Management]
     </h1>
   </header>
+
+
 
   <section>
     <nav>
@@ -47,8 +68,7 @@
       </ul>
     </nav>
   </section>
-</body>
-
+</div>
 
  
 
