@@ -1,20 +1,26 @@
-<meta charset="utf-8">
-<meta name = "viewport" content="width = device-width, initial-scale = 1">
+<script>
+  // Zde můžete přidat logiku komponenty, pokud je potřeba
+</script>
 
 <style>
-  header{
-    color:brown
+  header {
+    background-color: orange;
+    height: 50px;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 </style>
 
-
-<header>
-  <h1>
-  Book Report Management
-  </h1>
-</header>
-<body>
-  <h1><i>Book Report Management</i></h1>
-</body><h2>hello</h2>
-
-<h2>POMOC!</h2>
+<main>
+  <header>
+    <h1>Správa Knihovních Referátů</h1>
+  </header>
+  <h2>Ahoj</h2>
+  <h2>POMOC!</h2>
+</main>
