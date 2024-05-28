@@ -12,26 +12,16 @@
   }
 
   let selectedGenre = ''; // Uchovává vybraný žánr pro filtrování
-
-  // Funkce pro filtrování podle žánru
-  function filterByGenre(genre) {
-    selectedGenre = genre; // Nastavení vybraného žánru pro filtrování
-  }
 </script>
 
 <style>
-  /* Stylizace zůstává stejná */
-	button{
-		text-align: right;
-		font-family: 'Arial Black';
-		text-decoration: none;
-		background-color: beige;
-		border: none;
-		cursor: pointer;
-		border-radius: 5px
-		
-		
-	}
+  :global(body) {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: beige;
+    height: 100vh;
+  }
+
   .header-container {
     background-color: rosybrown;
     display: flex;
@@ -53,7 +43,7 @@
     flex-direction: column;
     padding: 20px;
     color: black;
-		text-align: left;
+    text-align: left;
   }
 
   .book-list-container {
@@ -65,7 +55,7 @@
   }
 
   .book-list {
-    width: 500px; /* Šířka seznamu knih */
+    width: 700px; /* Šířka seznamu knih */
     padding: 10px; /* Odsazení obsahu seznamu knih */
   }
 
@@ -83,14 +73,36 @@
 
   .book-title {
     font-size: 2em; /* Velikost písma */
-		font-family: 'Arial Black';
+    font-family: 'Arial Black';
     color: black; /* Barva textu */
     margin-top: 10px; /* Odsazení nadpisu od horního okraje */
     margin-left: 10px; /* Odsazení nadpisu od levého okraje */
-		text-align: center;
+    text-align: center;
+  }
+
+  /* Responzivita */
+  @media (max-width: 800px) {
+    .book-list-container {
+      padding-left: 0;
+    }
+
+    .book-list {
+      width: 100%;
+    }
+
+    .book {
+      border-radius: 20px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .book-title {
+      font-size: 1.5em;
+    }
   }
 </style>
-
 
 <!-- Nadpis "Book Report Management" -->
 <div class="header-container">
@@ -100,29 +112,19 @@
 </div>
 
 <!-- Filtry pro žánry -->
-
 <div style="position: absolute; 
-						right: 200px; 
-						top: 360px; 
-						background-color: rosybrown; 
-						padding: 10px; 
-						border-radius: 30px;
-						width: 400px; 
-           padding: 10px;
-						
-						">
-	 <p> <button on:click={() => filterByGenre('')}>Zrušit filtr</button> </p> <!-- Tlačítko pro zrušení filtru -->
-	<p>	<button on:click={() => filterByGenre('Žánr 1')}>Žánr 1</button> </p> <!-- Tlačítko pro filtrování žánru 1 -->
-  <p> <button on:click={() => filterByGenre('Žánr 2')}>Žánr 2</button> </p> <!-- Tlačítko pro filtrování žánru 2 -->
-  <p> <button on:click={() => filterByGenre('Žánr 3')}>Žánr 3</button> </p> <!-- Tlačítko pro filtrování žánru 3 -->
-   <p><button on:click={() => filterByGenre('Žánr 4')}>Žánr 4</button> </p> <!-- Tlačítko pro filtrování žánru 4 -->
-  <p> <button on:click={() => filterByGenre('Žánr 5')}>Žánr 5</button> </p> <!-- Tlačítko pro filtrování žánru 5 -->
-
-	
- 
+            right: 50px; 
+            top: 360px; 
+            background-color: rosybrown; 
+            padding: 10px; 
+            border-radius: 30px;
+            width: 400px; 
+            padding: 10px;">
+  <p> <button on:click={() => selectedGenre = ''}>Zrušit filtr</button> </p> <!-- Tlačítko pro zrušení filtru -->
+  {#each Array.from({ length: 5 }, (_, i) => i + 1) as i}
+    <p> <button on:click={() => selectedGenre = `Žánr ${i}`}>Žánr {i}</button> </p> <!-- Tlačítko pro filtrování žánru -->
+  {/each}
 </div>
-
-
 
 <!-- Kontejner pro seznam knih -->
 <div class="book-container">
