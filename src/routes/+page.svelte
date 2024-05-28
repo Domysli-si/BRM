@@ -89,7 +89,7 @@
 </div>
 
 <!-- Filtry pro žánry -->
-<div style="position: left; right: 20px; top: 20px; background-color: darkorange; padding: 10px; border-radius: 5px;">
+<div style="position: absolute; right: 20px; top: 20px; background-color: darkorange; padding: 10px; border-radius: 5px;">
   <button on:click={() => filterByGenre('Žánr 1')}>Žánr 1</button> <!-- Tlačítko pro filtrování žánru 1 -->
   <button on:click={() => filterByGenre('Žánr 2')}>Žánr 2</button> <!-- Tlačítko pro filtrování žánru 2 -->
   <button on:click={() => filterByGenre('Žánr 3')}>Žánr 3</button> <!-- Tlačítko pro filtrování žánru 3 -->
