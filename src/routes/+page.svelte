@@ -20,20 +20,17 @@
 </script>
 
 <style>
-  /* Stylizace zůstává stejná */
-	button{
-		text-align: right;
-		font-family: 'Arial Black';
-		text-decoration: none;
-		background-color: beige;
-		border: none;
-		cursor: pointer;
-		border-radius: 5px
-		
-		
-	}
+
+:global(body) {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: beige;
+  height: 100vh;
+}
+
+
   .header-container {
-    background-color: rosybrown;
+    background-color: rgba(188, 143, 143, 0.9); /* Průhledné pozadí */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,49 +45,70 @@
 
   .book-container {
     display: flex;
-    justify-content: flex-start; /* Zarovnání na levou stranu */
-    align-items: left;
     flex-direction: column;
     padding: 20px;
     color: black;
-		text-align: left;
+    text-align: left;
   }
 
   .book-list-container {
-    max-width: calc(100%); /* Odstup od okraje */
-    overflow-y: scroll;
+    overflow-y: auto;
     max-height: 60vh;
-    padding-left: 20px; /* Odstup seznamu knih od levého okraje */
+    padding-right: 20px; /* Přidání odsazení pro scrollbar */
+    margin-right: 160px; /* Odstup od pravého okraje pro filtry */
     overflow-x: hidden; /* Odebrání možnosti horizontálního posunu */
   }
 
   .book-list {
-    width: 500px; /* Šířka seznamu knih */
+    width: 100%; /* Šířka seznamu knih */
     padding: 10px; /* Odsazení obsahu seznamu knih */
   }
 
   .book {
     position: relative; /* Relativní pozice pro umístění textu */
-    width: 100%;
+    width: calc(100% - 20px); /* Zajištění správné šířky bez horizontálního scrollbaru */
     height: 200px;
-    background-color: rosybrown;
+    background-color: rgba(188, 143, 143, 0.9); /* Průhledné pozadí knih */
     margin-bottom: 10px;
     border-radius: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column; /* Umožňuje textu zaujímat horní roh */
+    padding:10px;
   }
 
   .book-title {
     font-size: 2em; /* Velikost písma */
-		font-family: 'Arial Black';
+    font-family: 'Arial Black';
     color: black; /* Barva textu */
     margin-top: 10px; /* Odsazení nadpisu od horního okraje */
-    margin-left: 10px; /* Odsazení nadpisu od levého okraje */
-		text-align: center;
+    text-align: center;
+  }
+
+  /* Styl pro kontejnery filtru */
+  .filter-container {
+    position: absolute;
+    right: 20px;
+    top: 325px;
+    background-color: rgba(188, 143, 143, 0.9); /* Průhledné pozadí */
+    padding: 10px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter-button {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: re;
+    background-color: visible;
+    border: none;
+    cursor: pointer;
   }
 </style>
-
 
 <!-- Nadpis "Book Report Management" -->
 <div class="header-container">
@@ -100,33 +118,18 @@
 </div>
 
 <!-- Filtry pro žánry -->
-
-<div style="position: absolute; 
-						right: 200px; 
-						top: 360px; 
-						background-color: rosybrown; 
-						padding: 10px; 
-						border-radius: 30px;
-						width: 400px; 
-           padding: 10px;
-						
-						">
-	 <p> <button on:click={() => filterByGenre('')}>Zrušit filtr</button> </p> <!-- Tlačítko pro zrušení filtru -->
-	<p>	<button on:click={() => filterByGenre('Žánr 1')}>Žánr 1</button> </p> <!-- Tlačítko pro filtrování žánru 1 -->
-  <p> <button on:click={() => filterByGenre('Žánr 2')}>Žánr 2</button> </p> <!-- Tlačítko pro filtrování žánru 2 -->
-  <p> <button on:click={() => filterByGenre('Žánr 3')}>Žánr 3</button> </p> <!-- Tlačítko pro filtrování žánru 3 -->
-   <p><button on:click={() => filterByGenre('Žánr 4')}>Žánr 4</button> </p> <!-- Tlačítko pro filtrování žánru 4 -->
-  <p> <button on:click={() => filterByGenre('Žánr 5')}>Žánr 5</button> </p> <!-- Tlačítko pro filtrování žánru 5 -->
-
-	
- 
+<div class="filter-container">
+  <button class="filter-button" on:click={() => filterByGenre('')}>Zrušit filtr</button> <!-- Tlačítko pro zrušení filtru -->
+  <button class="filter-button" on:click={() => filterByGenre('Žánr 1')}>Žánr 1</button> <!-- Tlačítko pro filtrování žánru 1 -->
+  <button class="filter-button" on:click={() => filterByGenre('Žánr 2')}>Žánr 2</button> <!-- Tlačítko pro filtrování žánru 2 -->
+  <button class="filter-button" on:click={() => filterByGenre('Žánr 3')}>Žánr 3</button> <!-- Tlačítko pro filtrování žánru 3 -->
+  <button class="filter-button" on:click={() => filterByGenre('Žánr 4')}>Žánr 4</button> <!-- Tlačítko pro filtrování žánru 4 -->
+  <button class="filter-button" on:click={() => filterByGenre('Žánr 5')}>Žánr 5</button> <!-- Tlačítko pro filtrování žánru 5 -->
 </div>
-
-
 
 <!-- Kontejner pro seznam knih -->
 <div class="book-container">
-  <h2 style="text-align: inherit;">Seznam knih</h2> <!-- Nadpis pro seznam knih, zarovnán na levou stranu -->
+  <h2 style="text-align: left;">Seznam knih</h2> <!-- Nadpis pro seznam knih, zarovnán na levou stranu -->
   <div class="book-list-container">
     <div class="book-list">
       {#each books as book}
