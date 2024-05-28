@@ -25,7 +25,7 @@
 <style>
   /* Stylizace zůstává stejná */
   .header-container {
-    background-color: darkorange;
+    background-color: rosybrown;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,7 +35,7 @@
   header {
     font-size: 2em;
     text-align: center;
-    color: black;
+    color: beige;
   }
 
   .book-container {
