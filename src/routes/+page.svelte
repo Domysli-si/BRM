@@ -22,12 +22,13 @@
 <style>
   /* Stylizace zůstává stejná */
 	button{
-		text-align: left ;
+		text-align: right;
 		font-family: 'Arial Black';
 		text-decoration: none;
 		background-color: beige;
 		border: none;
 		cursor: pointer;
+		border-radius: 5px
 		
 		
 	}
@@ -100,7 +101,16 @@
 
 <!-- Filtry pro žánry -->
 
-<div style="position: absolute; right: 200px; top: 250px; background-color: rosybrown; padding: 10px; border-radius: 30px;">
+<div style="position: absolute; 
+						right: 200px; 
+						top: 360px; 
+						background-color: rosybrown; 
+						padding: 10px; 
+						border-radius: 30px;
+						width: 400px; 
+           padding: 10px;
+						
+						">
 	 <p> <button on:click={() => filterByGenre('')}>Zrušit filtr</button> </p> <!-- Tlačítko pro zrušení filtru -->
 	<p>	<button on:click={() => filterByGenre('Žánr 1')}>Žánr 1</button> </p> <!-- Tlačítko pro filtrování žánru 1 -->
   <p> <button on:click={() => filterByGenre('Žánr 2')}>Žánr 2</button> </p> <!-- Tlačítko pro filtrování žánru 2 -->
@@ -116,7 +126,7 @@
 
 <!-- Kontejner pro seznam knih -->
 <div class="book-container">
-  <h2 style="text-align: left;">Seznam knih</h2> <!-- Nadpis pro seznam knih, zarovnán na levou stranu -->
+  <h2 style="text-align: inherit;">Seznam knih</h2> <!-- Nadpis pro seznam knih, zarovnán na levou stranu -->
   <div class="book-list-container">
     <div class="book-list">
       {#each books as book}
