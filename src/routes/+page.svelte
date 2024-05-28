@@ -2,8 +2,10 @@
   let books = []; // Seznam knih
 	books.push({title : 'Na západní frontě klid', author:'Erich Maria Remarque',
 							genre: `historický román`, year: 1928})
-	books.push({title : 'Farma zvířat'})
-	books.push({title : 'Proměna'})
+	books.push({title : 'Farma zvířat', author:'George Orwell',
+							genre: `klíčový román`, year: 1945})
+	books.push({title : 'Proměna', author:'Franz Kafka',
+							genre: `povídka`, year: 1915})
 
 	
 
@@ -56,6 +58,7 @@
     font-size: 2em;
     text-align: center;
     color: beige;
+		font-family: 'Arial Black';
   }
 
   .book-container {
