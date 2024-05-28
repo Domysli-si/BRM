@@ -55,21 +55,26 @@
 
 <style>
   /* Stylizace zůstává stejná */
+	body{
+		background-color: #92ba92;
+	}
 	button{
 		text-align: right;
 		font-family: 'Arial Black';
 		text-decoration: none;
-		background-color: beige;
+		background-color: #78938a;
 		border: none;
 		cursor: pointer;
 		border-radius: 5px;
 		width: 300px;
 		text-align: center;
+		color: #f1ddbf;
 		
 		
 	}
+	
   .header-container {
-    background-color: rosybrown;
+    background-color: #525e75;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,7 +84,7 @@
   header {
     font-size: 2em;
     text-align: center;
-    color: beige;
+    color: #f1ddbf;
 		font-family: 'Arial Black';
   }
 
@@ -89,7 +94,7 @@
     align-items: left;
     flex-direction: column;
     padding: 20px;
-    color: beige;
+    color: #f1ddbf;
 		font-size: 18px;
 		font-family: 'Arial Black';
 		text-align: center;
@@ -112,7 +117,7 @@
     position: relative; /* Relativní pozice pro umístění textu */
     width: 100%;
     height: 200px;
-    background-color: rosybrown;
+    background-color:  #525e75;
     margin-bottom: 10px;
     border-radius: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -123,12 +128,11 @@
   .book-title {
     font-size: 2em; /* Velikost písma */
 		font-family: 'Arial Black';
-    color: black; /* Barva textu */
     margin-top: 10px; /* Odsazení nadpisu od horního okraje */
     margin-left: 10px; /* Odsazení nadpisu od levého okraje */
 		text-align: center;
 		text-decoration-line: underline;
-		color: beige;
+		color: #f1ddbf;
   }
 </style>
 
@@ -141,11 +145,11 @@
 </div>
 
 <!-- Filtry pro žánry -->
-
-<div style=" position: absolute;
+<body>
+	<div style=" position: absolute;
 						right: 200px; 
 						top: 360px; 
-						background-color: rosybrown; 
+						background-color:  #525e75; 
 						padding: 10px; 
 						border-radius: 30px;
 						width: 300px; 
@@ -183,4 +187,7 @@
     </div>
   </div>
 </div>
+
+</body>
+
 
