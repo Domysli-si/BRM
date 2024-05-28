@@ -19,13 +19,10 @@
   }
 </script>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
 <style>
   /* Stylizace zůstává stejná */
   .header-container {
-    background-color: rosybrown;
+    background-color: darkorange;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,13 +32,13 @@
   header {
     font-size: 2em;
     text-align: center;
-    color: beige;
+    color: black;
   }
 
   .book-container {
     display: flex;
     justify-content: flex-start; /* Zarovnání na levou stranu */
-    align-items: left;
+    align-items: center;
     flex-direction: column;
     padding: 20px;
     color: black;
