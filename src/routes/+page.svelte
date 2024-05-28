@@ -41,7 +41,7 @@
   .book-container {
     display: flex;
     justify-content: flex-start; /* Zarovnání na levou stranu */
-    align-items: center;
+    align-items: left;
     flex-direction: column;
     padding: 20px;
     color: black;
