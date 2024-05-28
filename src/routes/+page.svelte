@@ -21,6 +21,16 @@
 
 <style>
   /* Stylizace zůstává stejná */
+	button{
+		text-align: left ;
+		font-family: 'Arial Black';
+		text-decoration: none;
+		background-color: beige;
+		border: none;
+		cursor: pointer;
+		
+		
+	}
   .header-container {
     background-color: rosybrown;
     display: flex;
@@ -42,11 +52,12 @@
     flex-direction: column;
     padding: 20px;
     color: black;
+		text-align: left;
   }
 
   .book-list-container {
     max-width: calc(100%); /* Odstup od okraje */
-    overflow-y: auto;
+    overflow-y: scroll;
     max-height: 60vh;
     padding-left: 20px; /* Odstup seznamu knih od levého okraje */
     overflow-x: hidden; /* Odebrání možnosti horizontálního posunu */
@@ -70,10 +81,12 @@
   }
 
   .book-title {
-    font-size: 1em; /* Velikost písma */
+    font-size: 2em; /* Velikost písma */
+		font-family: 'Arial Black';
     color: black; /* Barva textu */
     margin-top: 10px; /* Odsazení nadpisu od horního okraje */
     margin-left: 10px; /* Odsazení nadpisu od levého okraje */
+		text-align: center;
   }
 </style>
 
@@ -86,14 +99,20 @@
 </div>
 
 <!-- Filtry pro žánry -->
-<div style="position: absolute; right: 20px; top: 20px; background-color: rosybrown; padding: 10px; border-radius: 5px;">
-  <button on:click={() => filterByGenre('Žánr 1')}>Žánr 1</button> <!-- Tlačítko pro filtrování žánru 1 -->
-  <button on:click={() => filterByGenre('Žánr 2')}>Žánr 2</button> <!-- Tlačítko pro filtrování žánru 2 -->
-  <button on:click={() => filterByGenre('Žánr 3')}>Žánr 3</button> <!-- Tlačítko pro filtrování žánru 3 -->
-  <button on:click={() => filterByGenre('Žánr 4')}>Žánr 4</button> <!-- Tlačítko pro filtrování žánru 4 -->
-  <button on:click={() => filterByGenre('Žánr 5')}>Žánr 5</button> <!-- Tlačítko pro filtrování žánru 5 -->
-  <button on:click={() => filterByGenre('')}>Zrušit filtr</button> <!-- Tlačítko pro zrušení filtru -->
+
+<div style="position: absolute; right: 200px; top: 250px; background-color: rosybrown; padding: 10px; border-radius: 30px;">
+	 <p> <button on:click={() => filterByGenre('')}>Zrušit filtr</button> </p> <!-- Tlačítko pro zrušení filtru -->
+	<p>	<button on:click={() => filterByGenre('Žánr 1')}>Žánr 1</button> </p> <!-- Tlačítko pro filtrování žánru 1 -->
+  <p> <button on:click={() => filterByGenre('Žánr 2')}>Žánr 2</button> </p> <!-- Tlačítko pro filtrování žánru 2 -->
+  <p> <button on:click={() => filterByGenre('Žánr 3')}>Žánr 3</button> </p> <!-- Tlačítko pro filtrování žánru 3 -->
+   <p><button on:click={() => filterByGenre('Žánr 4')}>Žánr 4</button> </p> <!-- Tlačítko pro filtrování žánru 4 -->
+  <p> <button on:click={() => filterByGenre('Žánr 5')}>Žánr 5</button> </p> <!-- Tlačítko pro filtrování žánru 5 -->
+
+	
+ 
 </div>
+
+
 
 <!-- Kontejner pro seznam knih -->
 <div class="book-container">
