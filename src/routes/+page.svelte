@@ -7,14 +7,17 @@
 	books.push({title : 'Proměna', author:'Franz Kafka',
 							genre: `povídka`, year: 1915})
 
-	
+	function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-	let random = Math.floor(Math.random * 5);
-		console.log(random);
+	
 
   // Nahraďte seznam knih v poli níže
   for (let i = 1; i <= 80; i++) {
-		
+		const random = getRandomInt(1,5);
     books.push({
       title: `Kniha ${i}`,
       author: `Autor ${i}`,
