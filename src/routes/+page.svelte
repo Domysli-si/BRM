@@ -1,8 +1,18 @@
 <script>
   let books = []; // Seznam knih
+	books.push({title : 'Na západní frontě klid', author:'Erich Maria Remarque',
+							genre: `historický román`, year: 1928})
+	books.push({title : 'Farma zvířat'})
+	books.push({title : 'Proměna'})
+
+	
+
+	let random = Math.floor(Math.random * 5);
+		console.log(random);
 
   // Nahraďte seznam knih v poli níže
   for (let i = 1; i <= 80; i++) {
+		
     books.push({
       title: `Kniha ${i}`,
       author: `Autor ${i}`,
@@ -18,8 +28,6 @@
     selectedGenre = genre; // Nastavení vybraného žánru pro filtrování
   }
 </script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 
 <style>
   /* Stylizace zůstává stejná */
@@ -30,7 +38,9 @@
 		background-color: beige;
 		border: none;
 		cursor: pointer;
-		border-radius: 5px
+		border-radius: 5px;
+		width: 300px;
+		text-align: center;
 		
 		
 	}
@@ -43,7 +53,7 @@
   }
 
   header {
-    font-size: 2vw;
+    font-size: 2em;
     text-align: center;
     color: beige;
   }
@@ -53,10 +63,9 @@
     justify-content: flex-start; /* Zarovnání na levou stranu */
     align-items: left;
     flex-direction: column;
-		font-family: 'Arial Black';
     padding: 20px;
     color: black;
-		
+		text-align: center;
   }
 
   .book-list-container {
@@ -65,7 +74,6 @@
     max-height: 60vh;
     padding-left: 20px; /* Odstup seznamu knih od levého okraje */
     overflow-x: hidden; /* Odebrání možnosti horizontálního posunu */
-		position: sticky;
   }
 
   .book-list {
@@ -86,12 +94,13 @@
   }
 
   .book-title {
-    font-size: 2vw; /* Velikost písma */
+    font-size: 2em; /* Velikost písma */
 		font-family: 'Arial Black';
-    color: beige; /* Barva textu */
+    color: black; /* Barva textu */
     margin-top: 10px; /* Odsazení nadpisu od horního okraje */
     margin-left: 10px; /* Odsazení nadpisu od levého okraje */
 		text-align: center;
+		color: beige;
   }
 </style>
 
@@ -105,15 +114,14 @@
 
 <!-- Filtry pro žánry -->
 
-<div style="position: absolute; 
+<div style=" position: absolute;
 						right: 200px; 
 						top: 360px; 
 						background-color: rosybrown; 
 						padding: 10px; 
 						border-radius: 30px;
-						width: 400px; 
+						width: 300px; 
            padding: 10px;
-						
 						">
 	 <p> <button on:click={() => filterByGenre('')}>Zrušit filtr</button> </p> <!-- Tlačítko pro zrušení filtru -->
 	<p>	<button on:click={() => filterByGenre('Žánr 1')}>Žánr 1</button> </p> <!-- Tlačítko pro filtrování žánru 1 -->
@@ -130,7 +138,7 @@
 
 <!-- Kontejner pro seznam knih -->
 <div class="book-container">
-  <h2 style="text-align: inherit;">Seznam knih</h2> <!-- Nadpis pro seznam knih, zarovnán na levou stranu -->
+  <h2 style="text-align: left;">Seznam knih</h2> <!-- Nadpis pro seznam knih, zarovnán na levou stranu -->
   <div class="book-list-container">
     <div class="book-list">
       {#each books as book}
