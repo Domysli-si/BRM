@@ -22,7 +22,7 @@
 <style>
   /* Stylizace zůstává stejná */
   .header-container {
-    background-color: darkorange;
+    background-color: rosybrown;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,7 +32,7 @@
   header {
     font-size: 2em;
     text-align: center;
-    color: black;
+    color: beige;
   }
 
   .book-container {
@@ -61,7 +61,7 @@
     position: relative; /* Relativní pozice pro umístění textu */
     width: 100%;
     height: 200px;
-    background-color: darkorange;
+    background-color: rosybrown;
     margin-bottom: 10px;
     border-radius: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
