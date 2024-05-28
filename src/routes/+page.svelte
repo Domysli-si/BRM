@@ -1,9 +1,9 @@
 <script>
   let books = []; // Seznam knih
 	books.push({title : 'Na západní frontě klid', author:'Erich Maria Remarque',
-							genre: `historický román`, year: 1928})
+							genre: `román`, year: 1928})
 	books.push({title : 'Farma zvířat', author:'George Orwell',
-							genre: `klíčový román`, year: 1945})
+							genre: `román`, year: 1945})
 	books.push({title : 'Proměna', author:'Franz Kafka',
 							genre: `povídka`, year: 1915})
 
@@ -16,14 +16,33 @@
 	
 
   // Nahraďte seznam knih v poli níže
-  for (let i = 1; i <= 80; i++) {
+  for (let i = 1; i <= 30; i++) {
 		const random = getRandomInt(1,5);
+		let randomGenre = '';
+			switch(random){
+			case 1:
+				randomGenre = `elegie`;
+				break;
+			case 2:
+				randomGenre = `román`;
+				break;
+			case 3:
+				randomGenre = `povídka`;
+				break;
+			case 4:
+				randomGenre = `legenda`;
+				break;
+			case 5:
+				randomGenre = `komedie`;
+				break;
+		}
     books.push({
       title: `Kniha ${i}`,
       author: `Autor ${i}`,
-      genre: `Žánr ${i % 5}`, // Přidání informace o žánru
+      genre: randomGenre, // Přidání informace o žánru
       year: 2020 + i // Přidání informace o roku vydání
     });
+	
   }
 
   let selectedGenre = ''; // Uchovává vybraný žánr pro filtrování
@@ -70,7 +89,9 @@
     align-items: left;
     flex-direction: column;
     padding: 20px;
-    color: black;
+    color: beige;
+		font-size: 18px;
+		font-family: 'Arial Black';
 		text-align: center;
   }
 
@@ -106,6 +127,7 @@
     margin-top: 10px; /* Odsazení nadpisu od horního okraje */
     margin-left: 10px; /* Odsazení nadpisu od levého okraje */
 		text-align: center;
+		text-decoration-line: underline;
 		color: beige;
   }
 </style>
@@ -128,13 +150,14 @@
 						border-radius: 30px;
 						width: 300px; 
            padding: 10px;
+						
 						">
-	 <p> <button on:click={() => filterByGenre('')}>Zrušit filtr</button> </p> <!-- Tlačítko pro zrušení filtru -->
-	<p>	<button on:click={() => filterByGenre('Žánr 1')}>Žánr 1</button> </p> <!-- Tlačítko pro filtrování žánru 1 -->
-  <p> <button on:click={() => filterByGenre('Žánr 2')}>Žánr 2</button> </p> <!-- Tlačítko pro filtrování žánru 2 -->
-  <p> <button on:click={() => filterByGenre('Žánr 3')}>Žánr 3</button> </p> <!-- Tlačítko pro filtrování žánru 3 -->
-   <p><button on:click={() => filterByGenre('Žánr 4')}>Žánr 4</button> </p> <!-- Tlačítko pro filtrování žánru 4 -->
-  <p> <button on:click={() => filterByGenre('Žánr 5')}>Žánr 5</button> </p> <!-- Tlačítko pro filtrování žánru 5 -->
+	 <p> <button on:click={() => filterByGenre('')}>Zrušit filtr žánrů</button> </p> <!-- Tlačítko pro zrušení filtru -->
+	<p>	<button on:click={() => filterByGenre('román')}>Román</button> </p> <!-- Tlačítko pro filtrování žánru 1 -->
+  <p> <button on:click={() => filterByGenre('elegie')}>Elegie</button> </p> <!-- Tlačítko pro filtrování žánru 2 -->
+  <p> <button on:click={() => filterByGenre('povídka')}>Povídka</button> </p> <!-- Tlačítko pro filtrování žánru 3 -->
+   <p><button on:click={() => filterByGenre('legenda')}>Legenda</button> </p> <!-- Tlačítko pro filtrování žánru 4 -->
+  <p> <button on:click={() => filterByGenre('komedie')}>Komedie</button> </p> <!-- Tlačítko pro filtrování žánru 5 -->
 
 	
  
@@ -144,7 +167,6 @@
 
 <!-- Kontejner pro seznam knih -->
 <div class="book-container">
-  <h2 style="text-align: left;">Seznam knih</h2> <!-- Nadpis pro seznam knih, zarovnán na levou stranu -->
   <div class="book-list-container">
     <div class="book-list">
       {#each books as book}
@@ -161,3 +183,4 @@
     </div>
   </div>
 </div>
+
