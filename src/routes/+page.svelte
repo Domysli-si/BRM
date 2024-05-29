@@ -63,23 +63,50 @@
 
   // Funkce pro otevření nového okna s obsahem
   function openNewWindow(book) {
-    const newWindow = window.open("", "_blank", "width=600,height=400");
+    const newWindow = window.open("", "_blank");
     newWindow.document.write(`
       <html>
         <head>
           <title>${book.title}</title>
           <style>
-            body { font-family: Arial, sans-serif; background-color: #92ba92; color: #f1ddbf; padding: 20px; }
-            .book { background-color: #525e75; padding: 20px; border-radius: 10px; }
-            .book-title { font-size: 2em; text-align: center; }
+            body {
+              font-family: Arial, sans-serif;
+              background-color: #92ba92;
+              color: #f1ddbf;
+              padding: 20px;
+            }
+            .book {
+              background-color: #525e75;
+              padding: 20px;
+              border-radius: 10px;
+            }
+            .book-title {
+              font-size: 2em;
+              text-align: center;
+              text-decoration: underline;
+            }
+            .book-details {
+              margin-top: 20px;
+              font-size: 1.2em;
+            }
+            .book-description {
+              margin-top: 20px;
+              font-size: 1em;
+              line-height: 1.5;
+            }
           </style>
         </head>
         <body>
           <div class="book">
             <div class="book-title">${book.title}</div>
-            <div>Autor: ${book.author}</div>
-            <div>Rok vydání: ${book.year}</div>
-            <div>Žánr: ${book.genre}</div>
+            <div class="book-details">
+              <div><strong>Autor:</strong> ${book.author}</div>
+              <div><strong>Rok vydání:</strong> ${book.year}</div>
+              <div><strong>Žánr:</strong> ${book.genre}</div>
+              <div class="book-description">
+                <p>Popis knihy může být zde...</p>
+              </div>
+            </div>
           </div>
         </body>
       </html>
@@ -98,14 +125,14 @@
 <body>
   <div
     style=" position: absolute;
-						right: 200px; 
-						top: 360px; 
-						background-color:  #525e75; 
-						padding: 10px; 
-						border-radius: 30px;
-						width: 300px; 
-           padding: 10px;
-						"
+            right: 200px; 
+            top: 360px; 
+            background-color:  #525e75; 
+            padding: 10px; 
+            border-radius: 30px;
+            width: 300px; 
+            padding: 10px;
+          "
   >
     <p>
       <button on:click={() => filterByGenre("")}>Zrušit filtr žánrů</button>
@@ -130,7 +157,13 @@
         {#each books as book}
           <!-- Přidání podmínky pro filtrování podle žánru -->
           {#if !selectedGenre || book.genre === selectedGenre}
-            <button class="book" on:click={() => openNewWindow(book)} on:keydown={(e) => { if (e.key === 'Enter' || e.key === ' ') openNewWindow(book); }}>
+            <button
+              class="book"
+              on:click={() => openNewWindow(book)}
+              on:keydown={(e) => {
+                if (e.key === "Enter" || e.key === " ") openNewWindow(book);
+              }}
+            >
               <div class="book-title">{book.title}</div>
               <!-- Zobrazení názvu knihy jako nadpis -->
               <div>Autor: {book.author}</div>
