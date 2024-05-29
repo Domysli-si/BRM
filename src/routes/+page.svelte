@@ -6,9 +6,9 @@
         <head>
           <title>${book.title}</title>
           <style>
-            body { font-family: Arial, sans-serif; background-color: #92ba92; color: #f1ddbf; padding: 20px; }
+            body { font-family: Arial Black; background-color: #92ba92; color: #f1ddbf; padding: 20px;}
             .book { background-color: #525e75; padding: 20px; border-radius: 10px; }
-            .book-title { font-size: 2em; text-align: center; }
+            .book-title { font-size: 2em; text-align: center; text-decoration-line: underline; }
           </style>
         </head>
         <body>
@@ -17,7 +17,7 @@
             <div>Autor: ${book.author}</div>
             <div>Rok vydání: ${book.year}</div>
             <div>Žánr: ${book.genre}</div>
-            <div>Popis: ${book.description}</div>
+            <div>${book.description}</div>
           </div>
         </body>
       </html>
@@ -37,12 +37,11 @@
     genre: `román`,
     year: 1928,
     description:
-      '<div class="my-class"> \
+      '<div style = "font-family: Arial Black;" class="my-class"> \
         <h1>Informace o knize</h1> \
-        <li>The paragraph of text</li> \
-        <div class="my-quote"> \
-            <p>The quote I\'d like to put in a div</p> \
-        </div> \
+        <li>Literární druh: epika </li> \
+			<li>Literární směr: meziválečná próza </li> \
+			<li>Časoprostor: 1. světová válka, hranice Francie a Německa </li> \
     </div>',
   });
 
@@ -51,6 +50,13 @@
     author: "George Orwell",
     genre: `román`,
     year: 1945,
+		description:
+      '<div style = "font-family: Arial Black;" class="my-class"> \
+        <h1>Informace o knize</h1> \
+        <li>Literární druh: epika </li> \
+			<li>Literární směr: meziválečná próza </li> \
+			<li>Časoprostor: 1. světová válka, hranice Francie a Německa </li> \
+    </div>',
   });
 
   books.push({
@@ -58,7 +64,13 @@
     author: "Franz Kafka",
     genre: `povídka`,
     year: 1915,
-    description: "Povídka o muži, který se promění v obřího brouka.",
+    description:
+      '<div style = "font-family: Arial Black;" class="my-class"> \
+        <h1>Informace o knize</h1> \
+        <li>Literární druh: epika </li> \
+			<li>Literární směr: meziválečná próza </li> \
+			<li>Časoprostor: 1. světová válka, hranice Francie a Německa </li> \
+    </div>',
   });
 
   // Nahraďte seznam knih v poli níže
@@ -105,69 +117,6 @@
     selectedAuthor = author;
   }
 </script>
-
-<!-- Nadpis "Book Report Management" -->
-<div class="header-container">
-  <header>
-    <h1>Book Report Management</h1>
-  </header>
-</div>
-
-<!-- Filtry pro žánry -->
-<body>
-  <div
-    style=" position: absolute;
-						right: 200px; 
-						top: 360px; 
-						background-color:  black; 
-						padding: 10px; 
-						border-radius: 30px;
-						width: 300px; 
-           padding: 10px;"
-  >
-      <p>
-        <button on:click={() => filterByGenre("")}>Zrušit filtr žánrů</button>
-        <!-- Tlačítko pro zrušení filtru -->
-      </p>
-      <!--Genre-->
-      <p><button on:click={() => filterByGenre("román")}>Román</button></p>
-      <p><button on:click={() => filterByGenre("elegie")}>Elegie</button></p>
-      <p><button on:click={() => filterByGenre("povídka")}>Povídka</button></p>
-      <p><button on:click={() => filterByGenre("legenda")}>Legenda</button></p>
-      <p><button on:click={() => filterByGenre("komedie")}>Komedie</button></p>
-
-      <p><button on:click={() => filterByAuthor("a")}>a</button></p>
-    </div>
-    <!-- Kontejner pro seznam knih -->
-    <div class="book-container">
-      <div class="book-list-container">
-        <div class="book-list">
-          {#each books as book}
-            <!-- Přidání podmínky pro filtrování podle žánru -->
-            {#if !selectedGenre || book.genre === selectedGenre}
-              <button
-                class="book"
-                on:click={() => openNewWindow(book)}
-                on:keydown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") openNewWindow(book);
-                }}
-              >
-                <div class="book-title">{book.title}</div>
-                <!-- Zobrazení názvu knihy jako nadpis -->
-                <div>Autor: {book.author}</div>
-                <!-- Zobrazení autora -->
-                <div>Rok vydání: {book.year}</div>
-                <!-- Zobrazení roku vydání -->
-                <div>Žánr: {book.genre}</div>
-                <!-- Zobrazení žánru -->
-              </button>
-            {/if}
-          {/each}
-        </div>
-      </div>
-    </div>
-  </body
->
 
 <style>
   body {
@@ -233,7 +182,7 @@
     cursor: pointer; /* Změna kurzoru při najetí myší */
   }
   .book-title {
-    font-size: 2em; /* Velikost písma */
+    font-size: 3em; /* Velikost písma */
     font-family: "Arial Black";
     margin-top: 10px; /* Odsazení nadpisu od horního okraje */
     margin-left: 10px; /* Odsazení nadpisu od levého okraje */
@@ -242,3 +191,67 @@
     color: #f1ddbf;
   }
 </style>
+
+<!-- Nadpis "Book Report Management" -->
+<div class="header-container">
+  <header>
+    <h1>Book Report Management</h1>
+  </header>
+</div>
+
+<!-- Filtry pro žánry -->
+<body>
+  <div
+    style=" position: absolute;
+						right: 200px; 
+						top: 360px; 
+						background-color:   #525e75; 
+						padding: 10px; 
+						border-radius: 30px;
+						width: 300px; 
+           padding: 10px;"
+  >
+      <p>
+        <button on:click={() => filterByGenre("")}>Zrušit filtr žánrů</button>
+        <!-- Tlačítko pro zrušení filtru -->
+      </p>
+      <!--Genre-->
+      <p><button on:click={() => filterByGenre("román")}>Román</button></p>
+      <p><button on:click={() => filterByGenre("elegie")}>Elegie</button></p>
+      <p><button on:click={() => filterByGenre("povídka")}>Povídka</button></p>
+      <p><button on:click={() => filterByGenre("legenda")}>Legenda</button></p>
+      <p><button on:click={() => filterByGenre("komedie")}>Komedie</button></p>
+
+      <p><button on:click={() => filterByAuthor("a")}>a</button></p>
+    </div>
+    <!-- Kontejner pro seznam knih -->
+    <div class="book-container">
+      <div class="book-list-container">
+        <div class="book-list">
+          {#each books as book}
+            <!-- Přidání podmínky pro filtrování podle žánru -->
+            {#if !selectedGenre || book.genre === selectedGenre}
+              <button
+                class="book"
+                on:click={() => openNewWindow(book)}
+                on:keydown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") openNewWindow(book);
+                }}
+              >
+                <div style = "font-family: Arial Black;"
+									class="book-title">{book.title}</div>
+                <!-- Zobrazení názvu knihy jako nadpis -->
+                <div>Autor: {book.author}</div>
+                <!-- Zobrazení autora -->
+                <div>Rok vydání: {book.year}</div>
+                <!-- Zobrazení roku vydání -->
+                <div>Žánr: {book.genre}</div>
+                <!-- Zobrazení žánru -->
+              </button>
+            {/if}
+          {/each}
+        </div>
+      </div>
+    </div>
+  </body
+>
