@@ -8,7 +8,13 @@
     author: "Erich Maria Remarque",
     genre: "román",
     year: 1928,
-    description: "Román o hrůzách první světové války.",
+    description: '<div class="my-class"> \
+        <h1>Informace o knize</h1> \
+        <li>The paragraph of text</li> \
+        <div class="my-quote"> \
+            <p>The quote I\'d like to put in a div</p> \
+        </div> \
+    </div>',
   });
   books.push({
     title: "Farma zvířat",
@@ -22,7 +28,7 @@
     author: "Franz Kafka",
     genre: "povídka",
     year: 1915,
-    description: "Povídka o muži, který se promění v obřího brouka.",
+    description: 'Povídka o muži, který se promění v obřího brouka.'
   });
 
   function getRandomInt(min, max) {
@@ -108,7 +114,7 @@
     background-color: #92ba92;
   }
   button {
-    text-align: right;
+    text-align: center;
     font-family: "Arial Black";
     text-decoration: none;
     background-color: #78938a;
@@ -116,7 +122,6 @@
     cursor: pointer;
     border-radius: 5px;
     width: 300px;
-    text-align: center;
     color: #f1ddbf;
   }
 
@@ -157,7 +162,7 @@
   }
 
   .book-list {
-    width: 500px;
+    width: 1000px;
     padding: 10px;
   }
 
