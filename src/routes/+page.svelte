@@ -1,5 +1,6 @@
 <script>
   import BookDetails from "./BookDetails.svelte";
+	
 
   let books = []; // Seznam knih
   books.push({
@@ -95,62 +96,13 @@
             <div>Autor: ${book.author}</div>
             <div>Rok vydání: ${book.year}</div>
             <div>Žánr: ${book.genre}</div>
-            <div>Popis: ${book.description}</div>
+            <div> ${book.description}</div>
           </div>
         </body>
       </html>
     `);
   }
 </script>
-
-<div class="header-container">
-  <header>
-    <h1>Book Report Management</h1>
-  </header>
-</div>
-
-<div
-  style="position: absolute;
-         right: 200px; 
-         top: 360px; 
-         background-color:  #525e75; 
-         padding: 10px; 
-         border-radius: 30px;
-         width: 300px;"
->
-  <p>
-    <button on:click={() => filterByGenre("")}>Zrušit filtr žánrů</button>
-  </p>
-  <p><button on:click={() => filterByGenre("román")}>Román</button></p>
-  <p><button on:click={() => filterByGenre("elegie")}>Elegie</button></p>
-  <p><button on:click={() => filterByGenre("povídka")}>Povídka</button></p>
-  <p><button on:click={() => filterByGenre("legenda")}>Legenda</button></p>
-  <p><button on:click={() => filterByGenre("komedie")}>Komedie</button></p>
-</div>
-
-<div class="book-container">
-  <div class="book-list-container">
-    <div class="book-list">
-      {#each books as book}
-        {#if !selectedGenre || book.genre === selectedGenre}
-          <button
-            class="book"
-            on:click={() => openNewWindow(book)}
-            on:keydown={(e) => {
-              if (e.key === "Enter" || e.key === " ") openNewWindow(book);
-            }}
-          >
-            <div class="book-title">{book.title}</div>
-            <div>Autor: {book.author}</div>
-            <div>Rok vydání: {book.year}</div>
-            <div>Žánr: {book.genre}</div>
-          </button>
-        {/if}
-      {/each}
-    </div>
-  </div>
-</div>
-
 <style>
   :global(body) {
     background-color: #92ba92;
@@ -201,6 +153,7 @@
     max-height: 60vh;
     padding-left: 20px;
     overflow-x: hidden;
+	
   }
 
   .book-list {
@@ -226,8 +179,56 @@
     font-family: "Arial Black";
     margin-top: 10px;
     margin-left: 10px;
-    text-align: center;
+    text-align: right;
     text-decoration-line: underline;
     color: #f1ddbf;
   }
 </style>
+
+<div class="header-container">
+  <header>
+    <h1>Book Report Management</h1>
+  </header>
+</div>
+
+<div
+  style="position: absolute;
+         right: 200px; 
+         top: 360px; 
+         background-color:  #525e75; 
+         padding: 10px; 
+         border-radius: 30px;
+         width: 300px;"
+>
+  <p>
+    <button on:click={() => filterByGenre("")}>Zrušit filtr žánrů</button>
+  </p>
+  <p><button on:click={() => filterByGenre("román")}>Román</button></p>
+  <p><button on:click={() => filterByGenre("elegie")}>Elegie</button></p>
+  <p><button on:click={() => filterByGenre("povídka")}>Povídka</button></p>
+  <p><button on:click={() => filterByGenre("legenda")}>Legenda</button></p>
+  <p><button on:click={() => filterByGenre("komedie")}>Komedie</button></p>
+</div>
+
+<div class="book-container">
+  <div class="book-list-container">
+    <div class="book-list">
+      {#each books as book}
+        {#if !selectedGenre || book.genre === selectedGenre}
+          <button
+            class="book"
+            on:click={() => openNewWindow(book)}
+            on:keydown={(e) => {
+              if (e.key === "Enter" || e.key === " ") openNewWindow(book);
+            }}
+          >
+            <div class="book-title">{book.title}</div>
+            <div>Autor: {book.author}</div>
+            <div>Rok vydání: {book.year}</div>
+            <div>Žánr: {book.genre}</div>
+          </button>
+        {/if}
+      {/each}
+    </div>
+  </div>
+</div>
