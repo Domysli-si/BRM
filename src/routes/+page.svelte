@@ -220,7 +220,7 @@
     cursor: pointer; /* Změna kurzoru při najetí myší */
   }
   .book-title {
-    font-size: 2em; /* Velikost písma */
+    font-size: 4em; /* Velikost písma */
     font-family: "Arial Black";
     margin-top: 10px; /* Odsazení nadpisu od horního okraje */
     margin-left: 10px; /* Odsazení nadpisu od levého okraje */
