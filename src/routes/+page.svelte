@@ -18,7 +18,7 @@
             <div>Autor: ${book.author}</div>
             <div>Rok vydání: ${book.year}</div>
             <div>Žánr: ${book.genre}</div>
-            <div>Popis: ${book.description}</div>
+            <div>${book.description}</div>
           </div>
         </body>
       </html>
