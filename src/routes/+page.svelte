@@ -199,7 +199,7 @@
   .book-list-container {
     max-width: calc(100%); /* Odstup od okraje */
     overflow-y: scroll;
-    max-height: 60vh;
+    max-height: 70vh;
     padding-left: 20px; /* Odstup seznamu knih od levého okraje */
     overflow-x: hidden; /* Odebrání možnosti horizontálního posunu */
   }
