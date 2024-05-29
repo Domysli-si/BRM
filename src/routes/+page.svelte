@@ -166,7 +166,7 @@
         </div>
       </div>
     </div>
-  </div></body
+  </body
 >
 
 <style>
@@ -212,7 +212,7 @@
   .book-list-container {
     max-width: calc(100%); /* Odstup od okraje */
     overflow-y: scroll;
-    max-height: 70vh;
+    max-height: 60vh;
     padding-left: 20px; /* Odstup seznamu knih od levého okraje */
     overflow-x: hidden; /* Odebrání možnosti horizontálního posunu */
   }
@@ -233,7 +233,7 @@
     cursor: pointer; /* Změna kurzoru při najetí myší */
   }
   .book-title {
-    font-size: 3em; /* Velikost písma */
+    font-size: 2em; /* Velikost písma */
     font-family: "Arial Black";
     margin-top: 10px; /* Odsazení nadpisu od horního okraje */
     margin-left: 10px; /* Odsazení nadpisu od levého okraje */
