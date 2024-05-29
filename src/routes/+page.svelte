@@ -122,6 +122,7 @@
 </div>
 
 <!-- Kontejner pro seznam knih a filtry -->
+<body>
 <div class="container">
   <!-- Seznam knih -->
   <div class="book-container">
@@ -171,6 +172,7 @@
     </div>
   </div>
 </div>
+</body>
 
 <style>
   body {
