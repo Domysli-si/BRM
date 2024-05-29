@@ -152,7 +152,7 @@
   <div class="filter-container">
     <div
       style="
-        background-color: black;
+        background-color: #525e75;
         padding: 10px;
         border-radius: 30px;
         width: 300px;
