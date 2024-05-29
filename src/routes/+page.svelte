@@ -54,8 +54,8 @@
       '<div style = "font-family: Arial Black;" class="my-class"> \
         <h1>Informace o knize</h1> \
         <li>Literární druh: epika </li> \
-			<li>Literární směr: meziválečná próza </li> \
-			<li>Časoprostor: 1. světová válka, hranice Francie a Německa </li> \
+			<li>Literární směr: realismus, antiutopie </li> \
+			<li>Časoprostor: 50. léta 20. století, v Anglii na venkově </li> \
     </div>',
   });
 
@@ -68,8 +68,8 @@
       '<div style = "font-family: Arial Black;" class="my-class"> \
         <h1>Informace o knize</h1> \
         <li>Literární druh: epika </li> \
-			<li>Literární směr: meziválečná próza </li> \
-			<li>Časoprostor: 1. světová válka, hranice Francie a Německa </li> \
+			<li>Literární směr: existencialismus </li> \
+			<li>Časoprostor: čas není určen, maloměstský byt </li> \
     </div>',
   });
 
