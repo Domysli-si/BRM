@@ -60,13 +60,37 @@
   function filterByGenre(genre) {
     selectedGenre = genre; // Nastavení vybraného žánru pro filtrování
   }
+
+  // Funkce pro otevření nového okna s obsahem
+  function openNewWindow(book) {
+    const newWindow = window.open("", "_blank", "width=600,height=400");
+    newWindow.document.write(`
+      <html>
+        <head>
+          <title>${book.title}</title>
+          <style>
+            body { font-family: Arial, sans-serif; background-color: #92ba92; color: #f1ddbf; padding: 20px; }
+            .book { background-color: #525e75; padding: 20px; border-radius: 10px; }
+            .book-title { font-size: 2em; text-align: center; }
+          </style>
+        </head>
+        <body>
+          <div class="book">
+            <div class="book-title">${book.title}</div>
+            <div>Autor: ${book.author}</div>
+            <div>Rok vydání: ${book.year}</div>
+            <div>Žánr: ${book.genre}</div>
+          </div>
+        </body>
+      </html>
+    `);
+  }
 </script>
 
 <!-- Nadpis "Book Report Management" -->
 <div class="header-container">
   <header>
     <h1>Book Report Management</h1>
-    <!-- Zde je nadpis "Book Report Management" -->
   </header>
 </div>
 
@@ -81,7 +105,6 @@
 						border-radius: 30px;
 						width: 300px; 
            padding: 10px;
-						
 						"
   >
     <p>
@@ -107,7 +130,7 @@
         {#each books as book}
           <!-- Přidání podmínky pro filtrování podle žánru -->
           {#if !selectedGenre || book.genre === selectedGenre}
-            <div class="book">
+            <button class="book" on:click={() => openNewWindow(book)} on:keydown={(e) => { if (e.key === 'Enter' || e.key === ' ') openNewWindow(book); }}>
               <div class="book-title">{book.title}</div>
               <!-- Zobrazení názvu knihy jako nadpis -->
               <div>Autor: {book.author}</div>
@@ -116,7 +139,7 @@
               <!-- Zobrazení roku vydání -->
               <div>Žánr: {book.genre}</div>
               <!-- Zobrazení žánru -->
-            </div>
+            </button>
           {/if}
         {/each}
       </div>
@@ -125,7 +148,6 @@
 </body>
 
 <style>
-  /* Stylizace zůstává stejná */
   body {
     background-color: #92ba92;
   }
@@ -192,6 +214,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column; /* Umožňuje textu zaujímat horní roh */
+    cursor: pointer; /* Změna kurzoru při najetí myší */
   }
 
   .book-title {
