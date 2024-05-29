@@ -7,9 +7,9 @@
         <head>
           <title>${book.title}</title>
           <style>
-            body { font-family: Arial Black; background-color: #92ba92; color: #f1ddbf; padding: 20px;}
+            body { font-family: Arial, sans-serif; background-color: #92ba92; color: #f1ddbf; padding: 20px; }
             .book { background-color: #525e75; padding: 20px; border-radius: 10px; }
-            .book-title { font-size: 2em; text-align: center; text-decoration-line: underline; }
+            .book-title { font-size: 2em; text-align: center; }
           </style>
         </head>
         <body>
@@ -18,7 +18,7 @@
             <div>Autor: ${book.author}</div>
             <div>Rok vydání: ${book.year}</div>
             <div>Žánr: ${book.genre}</div>
-            <div>${book.description}</div>
+            <div>Popis: ${book.description}</div>
           </div>
         </body>
       </html>
@@ -41,8 +41,8 @@
     author: "Erich Maria Remarque",
     genre: "román",
     year: 1928,
-    description:
-      '<div class="my-class"> \
+     description:
+      '<div style = "font-family: Arial Black;" class="my-class"> \
         <h1>Informace o knize</h1> \
         <li>Literární druh: epika </li> \
 			<li>Literární směr: meziválečná próza </li> \
@@ -55,13 +55,6 @@
     author: "George Orwell",
     genre: "román",
     year: 1945,
-		description:
-      '<div style = "font-family: Arial Black;" class="my-class"> \
-        <h1>Informace o knize</h1> \
-        <li>Literární druh: epika </li> \
-			<li>Literární směr: realismus, antiutopie </li> \
-			<li>Časoprostor: 50. léta 20. století, v Anglii na venkově </li> \
-    </div>',
   });
 
   books.push({
@@ -69,13 +62,7 @@
     author: "Franz Kafka",
     genre: "povídka",
     year: 1915,
-    description:
-      '<div style = "font-family: Arial Black;" class="my-class"> \
-        <h1>Informace o knize</h1> \
-        <li>Literární druh: epika </li> \
-			<li>Literární směr: existencialismus </li> \
-			<li>Časoprostor: čas není určen, maloměstský byt </li> \
-    </div>',
+    description: "Povídka o muži, který se promění v obřího brouka.",
   });
 
   // Generování dalších knih
@@ -127,68 +114,63 @@
   }
 </script>
 
-<!-- Nadpis "Book Report Management" -->
+<!-- Nadpis "Správa knih" -->
 <div class="header-container">
   <header>
-    <h1>Book Report Management</h1>
+    <h1>Správa knih</h1>
   </header>
 </div>
 
-<!-- Filtry pro žánry -->
-<body>
-  <div
-    style=" position: absolute;
-						right: 200px; 
-						top: 360px; 
-						background-color:  black; 
-						padding: 10px; 
-						border-radius: 30px;
-						width: 300px; 
-           padding: 10px;"
-  >
+<!-- Kontejner pro seznam knih a filtry -->
+<div class="container">
+  <!-- Seznam knih -->
+  <div class="book-container">
+    <div class="book-list-container">
+      <div class="book-list">
+        {#each books as book}
+          <!-- Podmínka pro filtrování podle žánru -->
+          {#if !selectedGenre || book.genre === selectedGenre}
+            <button
+              class="book"
+              on:click={() => openNewWindow(book)}
+              on:keydown={(e) => {
+                if (e.key === "Enter" || e.key === " ") openNewWindow(book);
+              }}
+            >
+              <div class="book-title">{book.title}</div>
+              <div>Autor: {book.author}</div>
+              <div>Rok vydání: {book.year}</div>
+              <div>Žánr: {book.genre}</div>
+            </button>
+          {/if}
+        {/each}
+      </div>
+    </div>
+  </div>
+
+  <!-- Filtry pro žánry -->
+  <div class="filter-container">
+    <div
+      style="
+        background-color: black;
+        padding: 10px;
+        border-radius: 30px;
+        width: 300px;
+      "
+    >
       <p>
-        <button on:click={() => filterByGenre("")}>Zrušit filtr žánrů</button>
         <!-- Tlačítko pro zrušení filtru -->
+        <button on:click={() => filterByGenre("")}>Zrušit filtr žánrů</button>
       </p>
-      <!--Genre-->
+      <!-- Žánry -->
       <p><button on:click={() => filterByGenre("román")}>Román</button></p>
       <p><button on:click={() => filterByGenre("elegie")}>Elegie</button></p>
       <p><button on:click={() => filterByGenre("povídka")}>Povídka</button></p>
       <p><button on:click={() => filterByGenre("legenda")}>Legenda</button></p>
       <p><button on:click={() => filterByGenre("komedie")}>Komedie</button></p>
-
-      <p><button on:click={() => filterByAuthor("a")}>a</button></p>
     </div>
-    <!-- Kontejner pro seznam knih -->
-    <div class="book-container">
-      <div class="book-list-container">
-        <div class="book-list">
-          {#each books as book}
-            <!-- Přidání podmínky pro filtrování podle žánru -->
-            {#if !selectedGenre || book.genre === selectedGenre}
-              <button
-                class="book"
-                on:click={() => openNewWindow(book)}
-                on:keydown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") openNewWindow(book);
-                }}
-              >
-                <div class="book-title">{book.title}</div>
-                <!-- Zobrazení názvu knihy jako nadpis -->
-                <div>Autor: {book.author}</div>
-                <!-- Zobrazení autora -->
-                <div>Rok vydání: {book.year}</div>
-                <!-- Zobrazení roku vydání -->
-                <div>Žánr: {book.genre}</div>
-                <!-- Zobrazení žánru -->
-              </button>
-            {/if}
-          {/each}
-        </div>
-      </div>
-    </div>
-  </body
->
+  </div>
+</div>
 
 <style>
   body {
@@ -269,7 +251,7 @@
   }
 
   .book-title {
-    font-size: 2em; /* Velikost písma */
+    font-size: 4em; /* Velikost písma */
     font-family: "Arial Black";
     margin-top: 10px; /* Odsazení nadpisu od horního okraje */
     margin-left: 10px; /* Odsazení nadpisu od levého okraje */
@@ -279,66 +261,3 @@
   }
 </style>
 
-<!-- Nadpis "Book Report Management" -->
-<div class="header-container">
-  <header>
-    <h1>Book Report Management</h1>
-  </header>
-</div>
-
-<!-- Filtry pro žánry -->
-<body>
-  <div
-    style=" position: absolute;
-						right: 200px; 
-						top: 360px; 
-						background-color:   #525e75; 
-						padding: 10px; 
-						border-radius: 30px;
-						width: 300px; 
-           padding: 10px;"
-  >
-      <p>
-        <button on:click={() => filterByGenre("")}>Zrušit filtr žánrů</button>
-        <!-- Tlačítko pro zrušení filtru -->
-      </p>
-      <!--Genre-->
-      <p><button on:click={() => filterByGenre("román")}>Román</button></p>
-      <p><button on:click={() => filterByGenre("elegie")}>Elegie</button></p>
-      <p><button on:click={() => filterByGenre("povídka")}>Povídka</button></p>
-      <p><button on:click={() => filterByGenre("legenda")}>Legenda</button></p>
-      <p><button on:click={() => filterByGenre("komedie")}>Komedie</button></p>
-
-      <p><button on:click={() => filterByAuthor("a")}>a</button></p>
-    </div>
-    <!-- Kontejner pro seznam knih -->
-    <div class="book-container">
-      <div class="book-list-container">
-        <div class="book-list">
-          {#each books as book}
-            <!-- Přidání podmínky pro filtrování podle žánru -->
-            {#if !selectedGenre || book.genre === selectedGenre}
-              <button
-                class="book"
-                on:click={() => openNewWindow(book)}
-                on:keydown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") openNewWindow(book);
-                }}
-              >
-                <div style = "font-family: Arial Black;"
-									class="book-title">{book.title}</div>
-                <!-- Zobrazení názvu knihy jako nadpis -->
-                <div>Autor: {book.author}</div>
-                <!-- Zobrazení autora -->
-                <div>Rok vydání: {book.year}</div>
-                <!-- Zobrazení roku vydání -->
-                <div>Žánr: {book.genre}</div>
-                <!-- Zobrazení žánru -->
-              </button>
-            {/if}
-          {/each}
-        </div>
-      </div>
-    </div>
-  </body
->
