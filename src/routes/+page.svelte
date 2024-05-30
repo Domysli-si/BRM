@@ -252,6 +252,7 @@
         padding: 10px;
         border-radius: 30px;
         width: 300px;
+				
       "
     >
       <p>
@@ -283,8 +284,10 @@
     cursor: pointer;
     border-radius: 5px;
     width: 300px;
+		height: 50px;
     color: #f1ddbf;
     margin-bottom: 5px;
+		font-size: 15px;
 
   }
 
