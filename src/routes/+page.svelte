@@ -7,18 +7,38 @@
         <head>
           <title>${book.title}</title>
           <style>
-            body { font-family: Arial, sans-serif; background-color: #92ba92; color: #f1ddbf; padding: 20px; }
+            body { font-family: Arial Black; background-color: #92ba92; color: #f1ddbf; padding: 20px;}
             .book { background-color: #525e75; padding: 20px; border-radius: 10px; }
             .book-title { font-size: 2em; text-align: center; }
           </style>
+					
         </head>
         <body>
           <div class="book">
-            <div class="book-title">${book.title}</div>
+            <div style="font-family: Arial Black;" class="book-title">${book.title}</div>
+						<div style = 
+						"text-align:right;
+						 top: 1000px;"> 
+						<a href="#section-1">Informace o knize</a><br />
+            <a href="#section-2">Informace o autorovi</a><br />
+            <a href="#section-3">Shrnutí</a><br />
+						</div>
+						
             <div>Autor: ${book.author}</div>
             <div>Rok vydání: ${book.year}</div>
             <div>Žánr: ${book.genre}</div>
-            <div>${book.description}</div>
+
+            <div>
+						<h1 id = "section-1">Informace o knize</h1>
+						<p>${book.book_description}</p>
+						</div>
+						<div>
+						<h1 id = "section-2">Informace o autorovi</h1></div>
+						<p>${book.author_description}</p>
+						<div>
+						<h1 id = "section-3">Shrnutí</h1>
+						<p>${book.summary}</p>
+						</div>
           </div>
         </body>
       </html>
@@ -41,12 +61,21 @@
     author: "Erich Maria Remarque",
     genre: "román",
     year: 1928,
-     description:
+     book_description:
       '<div style = "font-family: Arial Black;" class="my-class"> \
-        <h1>Informace o knize</h1> \
-        <li>Literární druh: epika </li> \
-			<li>Literární směr: meziválečná próza </li> \
-			<li>Časoprostor: 1. světová válka, hranice Francie a Německa </li> \
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet porttitor eget dolor morbi non. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque. Euismod nisi porta lorem mollis aliquam ut porttitor leo. Enim nulla aliquet porttitor lacus. Praesent tristique magna sit amet. Nibh venenatis cras sed felis eget velit aliquet. Facilisis leo vel fringilla est ullamcorper. Feugiat nisl pretium fusce id. Elementum nibh tellus molestie nunc non. Semper eget duis at tellus at urna condimentum. Semper quis lectus nulla at volutpat. Duis convallis convallis tellus id interdum velit laoreet id donec. Integer eget aliquet nibh praesent tristique magna sit. Pharetra pharetra massa massa ultricies. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Dictum varius duis at consectetur. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus. </li> \
+			<li>Et malesuada fames ac turpis. Maecenas volutpat blandit aliquam etiam. Leo in vitae turpis massa. Massa eget egestas purus viverra accumsan in. Volutpat est velit egestas dui id ornare. Felis bibendum ut tristique et. Non quam lacus suspendisse faucibus interdum posuere. Dictum at tempor commodo ullamcorper a lacus. Augue neque gravida in fermentum. Elementum integer enim neque volutpat ac tincidunt. Scelerisque purus semper eget duis at. </li> \
+			<li>Arcu bibendum at varius vel pharetra vel turpis. Turpis egestas pretium aenean pharetra magna ac. Ultricies mi quis hendrerit dolor. Eu facilisis sed odio morbi quis. Tempor commodo ullamcorper a lacus vestibulum sed arcu non odio. Adipiscing commodo elit at imperdiet dui accumsan sit amet nulla. In est ante in nibh mauris cursus mattis. Nunc sed velit dignissim sodales ut eu sem. Volutpat diam ut venenatis tellus in metus vulputate. Aliquet nibh praesent tristique magna. Urna neque viverra justo nec. Scelerisque eu ultrices vitae auctor eu augue ut lectus. </li> \
+    </div>',
+		author_description:  '<div style = "font-family: Arial Black;" class="my-class"> \
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet porttitor eget dolor morbi non. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque. Euismod nisi porta lorem mollis aliquam ut porttitor leo. Enim nulla aliquet porttitor lacus. Praesent tristique magna sit amet. Nibh venenatis cras sed felis eget velit aliquet. Facilisis leo vel fringilla est ullamcorper. Feugiat nisl pretium fusce id. Elementum nibh tellus molestie nunc non. Semper eget duis at tellus at urna condimentum. Semper quis lectus nulla at volutpat. Duis convallis convallis tellus id interdum velit laoreet id donec. Integer eget aliquet nibh praesent tristique magna sit. Pharetra pharetra massa massa ultricies. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Dictum varius duis at consectetur. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus. </li> \
+			<li>Et malesuada fames ac turpis. Maecenas volutpat blandit aliquam etiam. Leo in vitae turpis massa. Massa eget egestas purus viverra accumsan in. Volutpat est velit egestas dui id ornare. Felis bibendum ut tristique et. Non quam lacus suspendisse faucibus interdum posuere. Dictum at tempor commodo ullamcorper a lacus. Augue neque gravida in fermentum. Elementum integer enim neque volutpat ac tincidunt. Scelerisque purus semper eget duis at. </li> \
+			<li>Arcu bibendum at varius vel pharetra vel turpis. Turpis egestas pretium aenean pharetra magna ac. Ultricies mi quis hendrerit dolor. Eu facilisis sed odio morbi quis. Tempor commodo ullamcorper a lacus vestibulum sed arcu non odio. Adipiscing commodo elit at imperdiet dui accumsan sit amet nulla. In est ante in nibh mauris cursus mattis. Nunc sed velit dignissim sodales ut eu sem. Volutpat diam ut venenatis tellus in metus vulputate. Aliquet nibh praesent tristique magna. Urna neque viverra justo nec. Scelerisque eu ultrices vitae auctor eu augue ut lectus. </li> \
+    </div>',
+		summary:  '<div style = "font-family: Arial Black;" class="my-class"> \
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet porttitor eget dolor morbi non. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque. Euismod nisi porta lorem mollis aliquam ut porttitor leo. Enim nulla aliquet porttitor lacus. Praesent tristique magna sit amet. Nibh venenatis cras sed felis eget velit aliquet. Facilisis leo vel fringilla est ullamcorper. Feugiat nisl pretium fusce id. Elementum nibh tellus molestie nunc non. Semper eget duis at tellus at urna condimentum. Semper quis lectus nulla at volutpat. Duis convallis convallis tellus id interdum velit laoreet id donec. Integer eget aliquet nibh praesent tristique magna sit. Pharetra pharetra massa massa ultricies. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Dictum varius duis at consectetur. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus. </li> \
+			<li>Et malesuada fames ac turpis. Maecenas volutpat blandit aliquam etiam. Leo in vitae turpis massa. Massa eget egestas purus viverra accumsan in. Volutpat est velit egestas dui id ornare. Felis bibendum ut tristique et. Non quam lacus suspendisse faucibus interdum posuere. Dictum at tempor commodo ullamcorper a lacus. Augue neque gravida in fermentum. Elementum integer enim neque volutpat ac tincidunt. Scelerisque purus semper eget duis at. </li> \
+			<li>Arcu bibendum at varius vel pharetra vel turpis. Turpis egestas pretium aenean pharetra magna ac. Ultricies mi quis hendrerit dolor. Eu facilisis sed odio morbi quis. Tempor commodo ullamcorper a lacus vestibulum sed arcu non odio. Adipiscing commodo elit at imperdiet dui accumsan sit amet nulla. In est ante in nibh mauris cursus mattis. Nunc sed velit dignissim sodales ut eu sem. Volutpat diam ut venenatis tellus in metus vulputate. Aliquet nibh praesent tristique magna. Urna neque viverra justo nec. Scelerisque eu ultrices vitae auctor eu augue ut lectus. </li> \
     </div>',
   });
 
@@ -55,6 +84,22 @@
     author: "George Orwell",
     genre: "román",
     year: 1945,
+		 book_description:
+      '<div style = "font-family: Arial Black;" class="my-class"> \
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet porttitor eget dolor morbi non. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque. Euismod nisi porta lorem mollis aliquam ut porttitor leo. Enim nulla aliquet porttitor lacus. Praesent tristique magna sit amet. Nibh venenatis cras sed felis eget velit aliquet. Facilisis leo vel fringilla est ullamcorper. Feugiat nisl pretium fusce id. Elementum nibh tellus molestie nunc non. Semper eget duis at tellus at urna condimentum. Semper quis lectus nulla at volutpat. Duis convallis convallis tellus id interdum velit laoreet id donec. Integer eget aliquet nibh praesent tristique magna sit. Pharetra pharetra massa massa ultricies. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Dictum varius duis at consectetur. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus. </li> \
+			<li>Et malesuada fames ac turpis. Maecenas volutpat blandit aliquam etiam. Leo in vitae turpis massa. Massa eget egestas purus viverra accumsan in. Volutpat est velit egestas dui id ornare. Felis bibendum ut tristique et. Non quam lacus suspendisse faucibus interdum posuere. Dictum at tempor commodo ullamcorper a lacus. Augue neque gravida in fermentum. Elementum integer enim neque volutpat ac tincidunt. Scelerisque purus semper eget duis at. </li> \
+			<li>Arcu bibendum at varius vel pharetra vel turpis. Turpis egestas pretium aenean pharetra magna ac. Ultricies mi quis hendrerit dolor. Eu facilisis sed odio morbi quis. Tempor commodo ullamcorper a lacus vestibulum sed arcu non odio. Adipiscing commodo elit at imperdiet dui accumsan sit amet nulla. In est ante in nibh mauris cursus mattis. Nunc sed velit dignissim sodales ut eu sem. Volutpat diam ut venenatis tellus in metus vulputate. Aliquet nibh praesent tristique magna. Urna neque viverra justo nec. Scelerisque eu ultrices vitae auctor eu augue ut lectus. </li> \
+    </div>',
+		author_description:  '<div style = "font-family: Arial Black;" class="my-class"> \
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet porttitor eget dolor morbi non. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque. Euismod nisi porta lorem mollis aliquam ut porttitor leo. Enim nulla aliquet porttitor lacus. Praesent tristique magna sit amet. Nibh venenatis cras sed felis eget velit aliquet. Facilisis leo vel fringilla est ullamcorper. Feugiat nisl pretium fusce id. Elementum nibh tellus molestie nunc non. Semper eget duis at tellus at urna condimentum. Semper quis lectus nulla at volutpat. Duis convallis convallis tellus id interdum velit laoreet id donec. Integer eget aliquet nibh praesent tristique magna sit. Pharetra pharetra massa massa ultricies. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Dictum varius duis at consectetur. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus. </li> \
+			<li>Et malesuada fames ac turpis. Maecenas volutpat blandit aliquam etiam. Leo in vitae turpis massa. Massa eget egestas purus viverra accumsan in. Volutpat est velit egestas dui id ornare. Felis bibendum ut tristique et. Non quam lacus suspendisse faucibus interdum posuere. Dictum at tempor commodo ullamcorper a lacus. Augue neque gravida in fermentum. Elementum integer enim neque volutpat ac tincidunt. Scelerisque purus semper eget duis at. </li> \
+			<li>Arcu bibendum at varius vel pharetra vel turpis. Turpis egestas pretium aenean pharetra magna ac. Ultricies mi quis hendrerit dolor. Eu facilisis sed odio morbi quis. Tempor commodo ullamcorper a lacus vestibulum sed arcu non odio. Adipiscing commodo elit at imperdiet dui accumsan sit amet nulla. In est ante in nibh mauris cursus mattis. Nunc sed velit dignissim sodales ut eu sem. Volutpat diam ut venenatis tellus in metus vulputate. Aliquet nibh praesent tristique magna. Urna neque viverra justo nec. Scelerisque eu ultrices vitae auctor eu augue ut lectus. </li> \
+    </div>',
+		summary:  '<div style = "font-family: Arial Black;" class="my-class"> \
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet porttitor eget dolor morbi non. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque. Euismod nisi porta lorem mollis aliquam ut porttitor leo. Enim nulla aliquet porttitor lacus. Praesent tristique magna sit amet. Nibh venenatis cras sed felis eget velit aliquet. Facilisis leo vel fringilla est ullamcorper. Feugiat nisl pretium fusce id. Elementum nibh tellus molestie nunc non. Semper eget duis at tellus at urna condimentum. Semper quis lectus nulla at volutpat. Duis convallis convallis tellus id interdum velit laoreet id donec. Integer eget aliquet nibh praesent tristique magna sit. Pharetra pharetra massa massa ultricies. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Dictum varius duis at consectetur. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus. </li> \
+			<li>Et malesuada fames ac turpis. Maecenas volutpat blandit aliquam etiam. Leo in vitae turpis massa. Massa eget egestas purus viverra accumsan in. Volutpat est velit egestas dui id ornare. Felis bibendum ut tristique et. Non quam lacus suspendisse faucibus interdum posuere. Dictum at tempor commodo ullamcorper a lacus. Augue neque gravida in fermentum. Elementum integer enim neque volutpat ac tincidunt. Scelerisque purus semper eget duis at. </li> \
+			<li>Arcu bibendum at varius vel pharetra vel turpis. Turpis egestas pretium aenean pharetra magna ac. Ultricies mi quis hendrerit dolor. Eu facilisis sed odio morbi quis. Tempor commodo ullamcorper a lacus vestibulum sed arcu non odio. Adipiscing commodo elit at imperdiet dui accumsan sit amet nulla. In est ante in nibh mauris cursus mattis. Nunc sed velit dignissim sodales ut eu sem. Volutpat diam ut venenatis tellus in metus vulputate. Aliquet nibh praesent tristique magna. Urna neque viverra justo nec. Scelerisque eu ultrices vitae auctor eu augue ut lectus. </li> \
+    </div>',
   });
 
   books.push({
@@ -63,6 +108,22 @@
     genre: "povídka",
     year: 1915,
     description: "Povídka o muži, který se promění v obřího brouka.",
+		 book_description:
+      '<div style = "font-family: Arial Black;" class="my-class"> \
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet porttitor eget dolor morbi non. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque. Euismod nisi porta lorem mollis aliquam ut porttitor leo. Enim nulla aliquet porttitor lacus. Praesent tristique magna sit amet. Nibh venenatis cras sed felis eget velit aliquet. Facilisis leo vel fringilla est ullamcorper. Feugiat nisl pretium fusce id. Elementum nibh tellus molestie nunc non. Semper eget duis at tellus at urna condimentum. Semper quis lectus nulla at volutpat. Duis convallis convallis tellus id interdum velit laoreet id donec. Integer eget aliquet nibh praesent tristique magna sit. Pharetra pharetra massa massa ultricies. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Dictum varius duis at consectetur. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus. </li> \
+			<li>Et malesuada fames ac turpis. Maecenas volutpat blandit aliquam etiam. Leo in vitae turpis massa. Massa eget egestas purus viverra accumsan in. Volutpat est velit egestas dui id ornare. Felis bibendum ut tristique et. Non quam lacus suspendisse faucibus interdum posuere. Dictum at tempor commodo ullamcorper a lacus. Augue neque gravida in fermentum. Elementum integer enim neque volutpat ac tincidunt. Scelerisque purus semper eget duis at. </li> \
+			<li>Arcu bibendum at varius vel pharetra vel turpis. Turpis egestas pretium aenean pharetra magna ac. Ultricies mi quis hendrerit dolor. Eu facilisis sed odio morbi quis. Tempor commodo ullamcorper a lacus vestibulum sed arcu non odio. Adipiscing commodo elit at imperdiet dui accumsan sit amet nulla. In est ante in nibh mauris cursus mattis. Nunc sed velit dignissim sodales ut eu sem. Volutpat diam ut venenatis tellus in metus vulputate. Aliquet nibh praesent tristique magna. Urna neque viverra justo nec. Scelerisque eu ultrices vitae auctor eu augue ut lectus. </li> \
+    </div>',
+		author_description:  '<div style = "font-family: Arial Black;" class="my-class"> \
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet porttitor eget dolor morbi non. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque. Euismod nisi porta lorem mollis aliquam ut porttitor leo. Enim nulla aliquet porttitor lacus. Praesent tristique magna sit amet. Nibh venenatis cras sed felis eget velit aliquet. Facilisis leo vel fringilla est ullamcorper. Feugiat nisl pretium fusce id. Elementum nibh tellus molestie nunc non. Semper eget duis at tellus at urna condimentum. Semper quis lectus nulla at volutpat. Duis convallis convallis tellus id interdum velit laoreet id donec. Integer eget aliquet nibh praesent tristique magna sit. Pharetra pharetra massa massa ultricies. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Dictum varius duis at consectetur. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus. </li> \
+			<li>Et malesuada fames ac turpis. Maecenas volutpat blandit aliquam etiam. Leo in vitae turpis massa. Massa eget egestas purus viverra accumsan in. Volutpat est velit egestas dui id ornare. Felis bibendum ut tristique et. Non quam lacus suspendisse faucibus interdum posuere. Dictum at tempor commodo ullamcorper a lacus. Augue neque gravida in fermentum. Elementum integer enim neque volutpat ac tincidunt. Scelerisque purus semper eget duis at. </li> \
+			<li>Arcu bibendum at varius vel pharetra vel turpis. Turpis egestas pretium aenean pharetra magna ac. Ultricies mi quis hendrerit dolor. Eu facilisis sed odio morbi quis. Tempor commodo ullamcorper a lacus vestibulum sed arcu non odio. Adipiscing commodo elit at imperdiet dui accumsan sit amet nulla. In est ante in nibh mauris cursus mattis. Nunc sed velit dignissim sodales ut eu sem. Volutpat diam ut venenatis tellus in metus vulputate. Aliquet nibh praesent tristique magna. Urna neque viverra justo nec. Scelerisque eu ultrices vitae auctor eu augue ut lectus. </li> \
+    </div>',
+		summary:  '<div style = "font-family: Arial Black;" class="my-class"> \
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet porttitor eget dolor morbi non. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque. Euismod nisi porta lorem mollis aliquam ut porttitor leo. Enim nulla aliquet porttitor lacus. Praesent tristique magna sit amet. Nibh venenatis cras sed felis eget velit aliquet. Facilisis leo vel fringilla est ullamcorper. Feugiat nisl pretium fusce id. Elementum nibh tellus molestie nunc non. Semper eget duis at tellus at urna condimentum. Semper quis lectus nulla at volutpat. Duis convallis convallis tellus id interdum velit laoreet id donec. Integer eget aliquet nibh praesent tristique magna sit. Pharetra pharetra massa massa ultricies. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Dictum varius duis at consectetur. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus. </li> \
+			<li>Et malesuada fames ac turpis. Maecenas volutpat blandit aliquam etiam. Leo in vitae turpis massa. Massa eget egestas purus viverra accumsan in. Volutpat est velit egestas dui id ornare. Felis bibendum ut tristique et. Non quam lacus suspendisse faucibus interdum posuere. Dictum at tempor commodo ullamcorper a lacus. Augue neque gravida in fermentum. Elementum integer enim neque volutpat ac tincidunt. Scelerisque purus semper eget duis at. </li> \
+			<li>Arcu bibendum at varius vel pharetra vel turpis. Turpis egestas pretium aenean pharetra magna ac. Ultricies mi quis hendrerit dolor. Eu facilisis sed odio morbi quis. Tempor commodo ullamcorper a lacus vestibulum sed arcu non odio. Adipiscing commodo elit at imperdiet dui accumsan sit amet nulla. In est ante in nibh mauris cursus mattis. Nunc sed velit dignissim sodales ut eu sem. Volutpat diam ut venenatis tellus in metus vulputate. Aliquet nibh praesent tristique magna. Urna neque viverra justo nec. Scelerisque eu ultrices vitae auctor eu augue ut lectus. </li> \
+    </div>',
   });
 
   // Generování dalších knih
