@@ -19,9 +19,9 @@
 						<div style = 
 						"text-align:right;
 						 top: 1000px;"> 
-						<a href="#section-1">Informace o knize</a><br />
-            <a href="#section-2">Informace o autorovi</a><br />
-            <a href="#section-3">Shrnutí</a><br />
+						<a href="#section-1" style="color:#f1ddbf;">Informace o knize</a><br />
+            <a href="#section-2" style="color:#f1ddbf;">Informace o autorovi</a><br />
+            <a href="#section-3"  style="color:#f1ddbf;">Shrnutí</a><br />
 						</div>
 						
             <div>Autor: ${book.author}</div>
@@ -356,3 +356,4 @@
     color: #f1ddbf;
   }
 </style>
+
