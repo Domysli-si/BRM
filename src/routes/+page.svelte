@@ -245,6 +245,8 @@
     selectedAuthor = author;
   }
 </script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 <!-- Nadpis "Správa knih" -->
 <div class="header-container">
