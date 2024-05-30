@@ -3,7 +3,8 @@
   function openNewWindow(book) {
     const newWindow = window.open("", "_blank");
     newWindow.document.write(`
-      <html>
+      <html> 
+  
         <head>
           <title>${book.title}</title>
           <style>
@@ -40,6 +41,7 @@
 						<p>${book.summary}</p>
 						</div>
           </div>
+					
         </body>
       </html>
     `);
@@ -218,7 +220,6 @@
 <!-- Kontejner pro seznam knih a filtry -->
 <body>
 <div class="container">
-  <!-- Seznam knih -->
   <div class="book-container">
     <div class="book-list-container">
       <div class="book-list">
@@ -233,9 +234,9 @@
               }}
             >
               <div class="book-title">{book.title}</div>
-              <div>Autor: {book.author}</div>
-              <div>Rok vydání: {book.year}</div>
-              <div>Žánr: {book.genre}</div>
+              <div style= "font-size: 30px;">Autor: {book.author}</div>
+              <div style= "font-size: 30px;">Rok vydání: {book.year}</div>
+              <div style= "font-size: 30px;">Žánr: {book.genre}</div>
             </button>
           {/if}
         {/each}
@@ -284,6 +285,7 @@
     width: 300px;
     color: #f1ddbf;
     margin-bottom: 5px;
+
   }
 
   .header-container {
@@ -336,7 +338,7 @@
   .book {
     position: relative; /* Relativní pozice pro umístění textu */
     width: 100%;
-    height: 200px;
+    height: 250px;
     background-color: #525e75;
     margin-bottom: 10px;
     border-radius: 40px;
